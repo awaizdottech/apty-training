@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time table and Login page</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVAQfqmunzZeNTZqMgs6KD5_1slidpuK5P0xsFIaj0c5IPesBNs2QmJq_9Lg0p_Y7KS0U&usqp=CAU"
+    />
+  </head>
+
+  <body>
+    <h2>Class Timetable</h2>
+    <table>
+      <th>Time</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <tr>
+        <td>9:00 - 10:00</td>
+        <td>Maths</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>Biology</td>
+        <td>Computer Science</td>
+      </tr>
+      <tr>
+        <td>10:00 - 11:00</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td colspan="2">Physics</td>
+        <td>Chemistry</td>
+      </tr>
+      <tr>
+        <td>11:00 - 12:00</td>
+        <td>Computer Science</td>
+        <td>English</td>
+        <td>Math</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+      </tr>
+      <tr>
+        <td>01:00 - 02:00</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td rowspan="2">Biology</td>
+      </tr>
+      <tr>
+        <td>03:00 - 04:00</td>
+        <td>Maths</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>Biology</td>
+      </tr>
+    </table>
+    <div class="form-container">
+      <div>
+        <h2>Login</h2>
+        <form
+          action="/xyz.com"
+          method="post"
+          autocomplete="on"
+          enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8"
+          novalidate
+          target="_blank"
+        >
+          <input type="text" placeholder="Username" required autofocus /><br />
+          <input type="password" placeholder="Password" required /><br />
+          <input type="email" multiple />
+          <input type="number" step="3" />
+          <input type="hidden" />
+          <input list="list" />
+          <datalist id="list">
+            <option value="1"></option>
+            <option value="3"></option>
+            <option value="2"></option>
+          </datalist>
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
