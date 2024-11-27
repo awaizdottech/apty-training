@@ -1,0 +1,65 @@
+/* *{
+  margin: 0;
+  padding: 0;
+} 
+gts rid of bullets from lists as well*/
+
+body {
+  box-sizing: border-box;
+  /* The width and height properties (and min/max properties) includes content, padding and border*/
+  margin: 0;
+  background-image: url("https://picsum.photos/1080?random=1");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Fira Code", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+header {
+  background-color: teal;
+  border: 4px solid goldenrod;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+p {
+  font-variant: small-caps;
+  background-color: #121212;
+  color: whitesmoke;
+  text-indent: 250px;
+}
+
+a:link {
+  color: gold;
+}
+a:hover {
+  color: red;
+}
+a:visited {
+  color: white;
+}
+
+ul {
+  list-style-type: georgian;
+  /* list-style-image: url("..."); */
+  visibility: collapse;
+  /* just turns it invisible but it still takes the same space in the page */
+}
+
+table {
+  margin: auto;
+  /* centers as per parent */
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 4px solid green;
+}
