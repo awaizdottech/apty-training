@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: whitesmoke;
+  /* box-sizing: border-box; doesnt get inherited when mentioned here*/
+  margin: 0;
+  font-family: "Fira Code", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  /* height: 100dvh; required if there are less elements & doesnt fill the page*/
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+header,
+p,
+section,
+img,
+footer {
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+ul {
+  border: 5px double red;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+section {
+  /* box-sizing: border-box; not inheritable */
+  width: 100%;
+  margin: 16px 0;
+  display: flex;
+  /* align-content: center; works for items in lines */
+}
+
+section ul:nth-child(2) {
+  order: 3;
+}
+
+@keyframes roll-to-start {
+  /* from {
+    align-self: flex-start;
+  }
+  to {
+    align-self: flex-end;
+  } */
+  0% {
+    align-self: flex-start;
+  }
+  50% {
+    align-self: center;
+  }
+  100% {
+    align-self: flex-end;
+  }
+}
+
+img {
+  /* align-self: flex-end; */
+  animation-name: roll-to-start;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  /* animation-fill-mode: backwards; */
+}
