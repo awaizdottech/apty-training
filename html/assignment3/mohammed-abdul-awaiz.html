@@ -1,0 +1,26 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="host"></div>
+    <span>I'm not in the shadow DOM</span>
+    <div id="host2">
+      <template shadowrootmode="closed">
+        <span>I'm in the shadow DOM as well</span>
+      </template>
+    </div>
+
+    <script>
+      const host = document.querySelector("#host");
+      const shadow = host.attachShadow({ mode: "open" });
+      const span = document.createElement("span");
+      span.textContent = "I'm in the shadow DOM";
+      shadow.appendChild(span);
+    </script>
+  </body>
+</html>
