@@ -38,7 +38,8 @@ header nav ul li {
   width: 90px;
 }
 
-#nav__button {
+#nav__button,
+.orange_button {
   padding: 12px 20px;
   background-color: #ff591a;
   border: 2px solid #231334;
@@ -47,7 +48,9 @@ header nav ul li {
   font-size: 14px;
 }
 
-#nav__button a {
+#nav__button a,
+.orange_button a,
+.button a {
   text-decoration: none;
   color: white;
 }
@@ -62,10 +65,33 @@ header nav ul li {
   border: 0 solid rgb(255, 255, 255, 0);
 }
 
-.button a {
-  text-decoration: none;
-  color: white;
+.gradient {
+  background: -webkit-linear-gradient(0deg, #ff7433, #fc56a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.gradient {
+footer {
+  background-color: #212121;
+  /* padding-left: 200px; */
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+footer ul li ul {
+  display: flex;
+  flex-direction: column;
+}
+
+footer article {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
