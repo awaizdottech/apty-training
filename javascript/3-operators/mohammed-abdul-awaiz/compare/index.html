@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <article>
+      <div>
+        <label for="type1">type 1</label>
+        <select id="type1">
+          <option value="string">string</option>
+          <option value="number">number</option>
+          <option value="boolean">boolean</option>
+          <option value="symbol">symbol</option>
+          <option value="object">object</option>
+        </select>
+      </div>
+      <div>
+        <label for="value1">value 1</label>
+        <input type="text" id="value1" required />
+      </div>
+    </article>
+    <article>
+      <div>
+        <label for="type2">type 2</label>
+        <select id="type2">
+          <option value="string">string</option>
+          <option value="number">number</option>
+          <option value="boolean">boolean</option>
+          <option value="symbol">symbol</option>
+          <option value="object">object</option>
+        </select>
+      </div>
+      <div>
+        <label for="value2">value 2</label>
+        <input type="text" id="value2" required />
+      </div>
+    </article>
+    <select id="operator" onclick="compare()">
+      <option value="&&">&&</option>
+      <option value="||">||</option>
+      <option value="!">!</option>
+    </select>
+    <p id="answer"></p>
+  </body>
+</html>

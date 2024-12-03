@@ -1,0 +1,13 @@
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  color: whitesmoke;
+  font-size: x-large;
+}
+div,
+select {
+  margin: 0 20px;
+}
