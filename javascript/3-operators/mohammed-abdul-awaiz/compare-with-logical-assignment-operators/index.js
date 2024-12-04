@@ -1,36 +1,42 @@
+document.getElementById("myForm").addEventListener("submit", function (event) {
+  // Prevent the default form submission behavior (no page refresh)
+  event.preventDefault();
+  compare();
+});
+
 function compare() {
   let value1 = document.getElementById("value1").value;
   let value2 = document.getElementById("value2").value;
   let type1 = document.getElementById("type1").value;
   let type2 = document.getElementById("type2").value;
   let operation = document.getElementById("operator").value;
-  let result;
-  // const answer_p = document.getElementById("answer");
-  console.log("hi");
+  let converted_value1;
+  const answer_p = document.getElementById("answer");
 
   try {
-    let converted_value1 = convertor(value1, type1);
+    converted_value1 = convertor(value1, type1);
     let converted_value2 = convertor(value2, type2);
     switch (operation) {
       case "&&":
-        result = String(converted_value1 && converted_value2);
+        converted_value1 &&= converted_value2;
         break;
       case "||":
-        result = String(converted_value1 || converted_value2);
+        converted_value1 ||= converted_value2;
         break;
-      case "!":
-        result = `${!converted_value1}, ${!converted_value2}`;
+      case "??":
+        converted_value1 ??= converted_value2;
         break;
       default:
-        result = "unidentified operation";
+        converted_value1 = "unidentified operation";
         break;
     }
   } catch (error) {
-    package.innerHTML = `The following error occured ${error}`;
+    answer_p.innerHTML = `The following error occured ${error}`;
     return;
   }
-
-  document.querySelector("p").innerHTML = result;
+  if (typeof converted_value1 == "symbol")
+    converted_value1 = String(converted_value1);
+  answer_p.innerHTML = converted_value1;
 }
 
 function convertor(raw, type) {
@@ -50,6 +56,8 @@ function convertor(raw, type) {
       case "symbol":
         converted = Symbol(raw);
         break;
+      case "bigint":
+        converted = BigInt(raw);
       case "object":
         converted = Object(raw);
         break;
