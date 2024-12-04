@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare with logical assignment operators</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <form id="myForm">
+      <article>
+        <input type="text" id="value1" required placeholder="value 1" />
+        <select id="type1">
+          <option value="string">string</option>
+          <option value="number">number</option>
+          <option value="boolean">boolean</option>
+          <option value="symbol">symbol</option>
+          <option value="bigint">bigint</option>
+          <option value="object">object</option>
+        </select>
+      </article>
+      <article>
+        <input type="text" id="value2" required placeholder="value 2" />
+        <select id="type2">
+          <option value="string">string</option>
+          <option value="number">number</option>
+          <option value="boolean">boolean</option>
+          <option value="symbol">symbol</option>
+          <option value="bigint">bigint</option>
+          <option value="object">object</option>
+        </select>
+      </article>
+      <article>
+        <select id="operator">
+          <option value="&&">&&</option>
+          <option value="||">||</option>
+          <option value="??">??</option>
+        </select>
+        <button type="submit">compare</button>
+      </article>
+      <p id="answer"></p>
+    </form>
+  </body>
+</html>

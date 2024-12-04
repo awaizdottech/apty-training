@@ -1,9 +1,8 @@
-function calculate() {
+function calculate(operator) {
   let result = Number(document.getElementById("number1").value);
   let value = Number(document.getElementById("number2").value);
-  const operation = document.getElementById("operator").value;
 
-  switch (operation) {
+  switch (operator) {
     case "+":
       result += value;
       break;

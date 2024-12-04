@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bitwise operators</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <article>
+      <input type="number" id="value1" placeholder="number 1" />
+      <input type="number" id="value2" placeholder="number 2" />
+    </article>
+    <article>
+      <button id="and" onclick="operate('and')">& - AND</button>
+      <button id="or" onclick="operate('or')">| - OR</button>
+      <button id="xor" onclick="operate('xor')">^ - XOR</button>
+      <button id="not" onclick="operate('not')">~ - NOT</button>
+      <button id="left-shift" onclick="operate('left-shift')">
+        << - left shift
+      </button>
+      <button id="right-shift" onclick="operate('right-shift')">
+        >> - right shift
+      </button>
+    </article>
+    <p id="result"></p>
+  </body>
+</html>

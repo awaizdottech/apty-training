@@ -9,22 +9,18 @@
   </head>
   <body>
     <div>
-      <label for="number1">number1</label>
-      <input type="number" id="number1" required />
+      <input type="number" id="number1" placeholder="number 1" />
+      <input type="number" id="number2" placeholder="number 2" />
     </div>
-    <div>
-      <label for="number2">number2</label>
-      <input type="number" id="number2" required />
+    <div id="buttons">
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('-')">-</button>
+      <button onclick="calculate('*')">*</button>
+      <button onclick="calculate('/')">/</button>
+      <button onclick="calculate('%')">%</button>
+      <button onclick="calculate('++')">++</button>
+      <button onclick="calculate('--')">--</button>
     </div>
-    <select id="operator" onclick="calculate()">
-      <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="*">*</option>
-      <option value="/">/</option>
-      <option value="%">%</option>
-      <option value="++">++</option>
-      <option value="--">--</option>
-    </select>
     <p id="answer">result:</p>
   </body>
 </html>

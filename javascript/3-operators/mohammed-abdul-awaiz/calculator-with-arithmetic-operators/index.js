@@ -1,10 +1,9 @@
-function calculate() {
-  let value1 = document.getElementById("number1").value;
-  let value2 = document.getElementById("number2").value;
-  const operation = document.getElementById("operator").value;
+function calculate(operator) {
+  let value1 = Number(document.getElementById("number1").value);
+  let value2 = Number(document.getElementById("number2").value);
   let result;
 
-  switch (operation) {
+  switch (operator) {
     case "+":
       result = value1 + value2;
       break;
@@ -32,5 +31,5 @@ function calculate() {
   }
 
   if (result == NaN) result = "not possible";
-  document.querySelector("p").innerHTML += result;
+  document.querySelector("p").innerHTML = result;
 }

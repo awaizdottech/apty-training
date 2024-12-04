@@ -1,13 +1,27 @@
 body {
   height: 100dvh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #121212;
   color: whitesmoke;
-  font-size: x-large;
+  font-size: 2rem;
 }
-div,
-select {
-  margin: 0 20px;
+
+div {
+  margin: 0.3em 0;
+}
+
+input {
+  padding: 8px;
+  border-radius: 15px;
+  padding: 5px 15px;
+}
+
+button {
+  border-radius: 30%;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: aqua;
 }
