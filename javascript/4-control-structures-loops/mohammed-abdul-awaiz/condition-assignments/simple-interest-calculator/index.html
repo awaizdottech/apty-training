@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple interest calculator</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <article>
+      <input
+        type="number"
+        id="principal"
+        placeholder="enter the principal amount"
+      />
+      <input
+        type="number"
+        id="rate"
+        placeholder="enter the rate of interest per year"
+      />
+      <input
+        type="number"
+        id="time"
+        placeholder="enter the time of interest in months"
+      />
+    </article>
+    <button onclick="interest()">calculate simple interest</button>
+    <p id="answer"></p>
+  </body>
+</html>

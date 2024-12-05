@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator with arithmetic operators</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div>
+      <input type="number" id="number1" placeholder="number 1" />
+      <input type="number" id="number2" placeholder="number 2" />
+    </div>
+    <div id="buttons">
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('-')">-</button>
+      <button onclick="calculate('*')">*</button>
+      <button onclick="calculate('/')">/</button>
+      <button onclick="calculate('%')">%</button>
+      <button onclick="calculate('++')">++</button>
+      <button onclick="calculate('--')">--</button>
+    </div>
+    <p id="answer">result:</p>
+  </body>
+</html>
