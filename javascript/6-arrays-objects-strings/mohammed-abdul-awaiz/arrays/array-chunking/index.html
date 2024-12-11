@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array chunking</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../../common-css/index.css" />
+  </head>
+  <body>
+    <input type="text" id="inputArray" placeholder="enter a JSON array:" />
+    <p>e.g., [1, 2, 3, 4, 5]</p>
+    <input type="number" id="chunkSize" placeholder="enter chunk size:" />
+    <p>e.g., 2</p>
+    <button onclick="displayChunks()">Chunk Array</button>
+    <div id="output"></div>
+  </body>
+</html>

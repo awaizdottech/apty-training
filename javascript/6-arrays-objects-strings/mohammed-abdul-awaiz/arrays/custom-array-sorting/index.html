@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>custom array sorting</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../../common-css/index.css" />
+  </head>
+  <body>
+    <input
+      type="text"
+      id="inputArray"
+      placeholder="Enter a JSON array of objects:"
+    />
+    <p>e.g., [{"name": "Bob", "score": 80}, {"name": "Alice", "score": 90}]</p>
+    <input
+      type="text"
+      id="sortProperty"
+      placeholder="Enter the property to sort by:"
+    />
+    <p>e.g., score</p>
+    <button onclick="displaySortedArray()">Sort</button>
+    <div id="output"></div>
+  </body>
+</html>
