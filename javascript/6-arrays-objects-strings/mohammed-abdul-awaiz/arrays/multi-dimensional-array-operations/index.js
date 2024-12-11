@@ -1,11 +1,9 @@
 function transposeMatrix(matrix) {
-  if (!Array.isArray(matrix) || !matrix.every((row) => Array.isArray(row))) {
-    return { error: "Input must be a 2D array." };
-  }
+  const transposed = [];
+  for (const _ of matrix) transposed.push([]);
 
-  const transposed = matrix[0].map((_, colIndex) =>
-    matrix.map((row) => row[colIndex])
-  );
+  for (let i = 0; i < matrix.length; i++)
+    for (let j = 0; j < matrix[i].length; j++) transposed[j][i] = matrix[i][j];
 
   return { transposed };
 }
@@ -17,7 +15,7 @@ function displayTransposedMatrix() {
     const matrix = JSON.parse(inputMatrix);
 
     if (!Array.isArray(matrix) || !matrix.every((row) => Array.isArray(row))) {
-      throw new Error("Input must be a valid 2D array.");
+      throw new Error("input must be a valid 2D array.");
     }
 
     const { transposed, error } = transposeMatrix(matrix);
