@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Elements Counter</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../common-css/index.css" />
+  </head>
+  <body>
+    <h1>Nested Elements Counter</h1>
+
+    <div class="container" id="parent1">
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <div>
+        <span>Span inside div</span>
+        <span>Another span</span>
+      </div>
+    </div>
+
+    <div class="container" id="parent2">
+      <iframe src="about:blank"></iframe>
+      <p>Paragraph inside second parent</p>
+    </div>
+
+    <div class="container" id="parent3">
+      <div>
+        <div>
+          <span>Deeply nested span</span>
+        </div>
+      </div>
+    </div>
+
+    <button id="countButton">Count Elements</button>
+
+    <div class="results" id="results">
+      <strong>Results:</strong>
+      <ul id="resultsList">
+        <!-- Results will be displayed here -->
+      </ul>
+    </div>
+  </body>
+</html>

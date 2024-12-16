@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display element count</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../common-css/index.css" />
+  </head>
+  <body>
+    <h1>Accessing Elements</h1>
+
+    <section id="paragraph-section">
+      <p id="highlight">Find and Highlight Me!</p>
+      <div>
+        <p>Paragraph in a div</p>
+        <p class="nested">Another nested paragraph</p>
+      </div>
+    </section>
+
+    <section>
+      <ul id="unordered-list">
+        <li>Item A</li>
+        <li>Item B</li>
+        <li class="special">Special Item</li>
+      </ul>
+      <ol>
+        <li>Ordered Item 1</li>
+        <li>Ordered Item 2</li>
+      </ol>
+    </section>
+    <section>
+      <div class="container">
+        <div class="nested-container">
+          <span>Find this nested span</span>
+          <p>This is a nested paragraph inside a container.</p>
+        </div>
+      </div>
+      <div class="container">
+        <p>This is another container paragraph.</p>
+      </div>
+    </section>
+
+    <div>
+      <div>Outer Div 1</div>
+      <div>Outer Div 2</div>
+    </div>
+  </body>
+</html>
