@@ -1,94 +1,122 @@
-const canvas = document.querySelector("tbody");
-for (let i = 0; i < 18; i++) {
-  const row = canvas.insertRow();
-  for (let j = 0; j < 18; j++) {
-    const cell = row.insertCell();
-    cell.id = `${i}-${j}`;
-  }
+// script.js
+const board = document.getElementById("game-board");
+const scoreDisplay = document.getElementById("score");
+
+const BOARD_SIZE = 20;
+const SPEED = 150; // Snake movement speed in ms
+let snake = [{ x: 10, y: 10 }]; // Snake starts in the middle
+let direction = { x: 0, y: 0 }; // Current direction
+let food = { x: 5, y: 5 }; // Initial food position
+let score = 0;
+let gameInterval;
+
+// Initialize the game
+function startGame() {
+  score = 0;
+  snake = [{ x: 10, y: 10 }];
+  direction = { x: 1, y: 0 }; // Snake moves right by default
+  food = randomFoodPosition();
+  scoreDisplay.textContent = `Score: ${score}`;
+  if (gameInterval) clearInterval(gameInterval);
+  gameInterval = setInterval(updateGame, SPEED);
 }
 
-let snake_head = [0, 1]; // row, column for right & down
-// let snake_head = [17, 17]; // row, column for left & up
-let snake_length = 2;
-let snake_tail = [0, 0]; // row, column for right & down
-// let snake_tail = [17, 17]; // row, column for left & up
-let snake_breakpoints = [];
-let snake_direction = "right";
+// Update the game state
+function updateGame() {
+  const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
 
-// snake initial position
-document.getElementById("0-0").className = "snake";
-document.getElementById("0-1").className = "snake";
-
-// snake_motion
-const row_array = Array.from(canvas.children);
-
-let current_row = 0; // for right & down motion
-// let current_row = 17; // for left & up motion
-const timer = setInterval(() => {
-  let columns_cells = row_array[current_row].children;
-  columns_cells = Array.from(columns_cells);
-
-  // right motion
-  /* snake_head[1]++;
-  columns_cells[snake_head[1]].classList.toggle("snake");
-
-  console.log("snake_head", snake_head, "snake_tail", snake_tail);
-  if (snake_head[1] - snake_tail[1] == snake_length) {
-    columns_cells[snake_tail[1]].classList.toggle("snake");
-    snake_tail[1]++;
-    console.log("nice");
-  } */
-
-  // left motion
-  columns_cells[snake_head[1]].classList.toggle("snake");
-  snake_head[1]--;
-
-  if (Math.abs(snake_head[1] - snake_tail[1]) == snake_length + 1) {
-    columns_cells[snake_tail[1]].classList.toggle("snake");
-    snake_tail[1]--;
+  // Check collisions with walls or itself
+  if (isCollision(head)) {
+    alert("Game Over! Your final score: " + score);
+    startGame();
+    return;
   }
 
-  // down motion
-  /* columns_cells[0].classList.toggle("snake");
+  // Add new head to the snake
+  snake.unshift(head);
 
-  if (snake_head[0] - snake_tail[0] == snake_length) {
-    let columns_cells = row_array[snake_head[0] - snake_length].children;
-    columns_cells = Array.from(columns_cells);
-    columns_cells[snake_tail[1]].classList.toggle("snake");
-    snake_tail[0]++;
+  // Check if the snake eats food
+  if (head.x === food.x && head.y === food.y) {
+    score++;
+    scoreDisplay.textContent = `Score: ${score}`;
+    food = randomFoodPosition();
+  } else {
+    // Remove the tail to keep the snake the same length
+    snake.pop();
   }
 
-  snake_head[0]++;
-  current_row++; */
+  drawGame();
+}
 
-  // up motion
-  /* columns_cells[17].classList.toggle("snake");
+// Draw the game (snake and food)
+function drawGame() {
+  board.innerHTML = "";
 
-  if (Math.abs(snake_head[0] - snake_tail[0]) == snake_length) {
-    let columns_cells = row_array[snake_head[0] + snake_length].children;
-    columns_cells = Array.from(columns_cells);
-    columns_cells[snake_tail[1]].classList.toggle("snake");
-    console.log(columns_cells[snake_tail[1]]);
+  // Draw the snake
+  snake.forEach((segment) => {
+    const snakeElement = document.createElement("div");
+    snakeElement.style.gridRowStart = segment.y;
+    snakeElement.style.gridColumnStart = segment.x;
+    snakeElement.classList.add("snake");
+    board.appendChild(snakeElement);
+  });
 
-    snake_tail[0]--;
+  // Draw the food
+  const foodElement = document.createElement("div");
+  foodElement.style.gridRowStart = food.y;
+  foodElement.style.gridColumnStart = food.x;
+  foodElement.classList.add("food");
+  board.appendChild(foodElement);
+}
+
+// Check if the head collides with the wall or itself
+function isCollision(head) {
+  return (
+    head.x < 1 ||
+    head.x > BOARD_SIZE ||
+    head.y < 1 ||
+    head.y > BOARD_SIZE ||
+    (snake.length > 1 &&
+      snake.some((segment) => segment.x === head.x && segment.y === head.y))
+  );
+}
+
+// Generate a random food position
+function randomFoodPosition() {
+  let newFoodPosition;
+  while (!newFoodPosition || isFoodOnSnake(newFoodPosition)) {
+    newFoodPosition = {
+      x: Math.floor(Math.random() * BOARD_SIZE) + 1,
+      y: Math.floor(Math.random() * BOARD_SIZE) + 1,
+    };
   }
+  return newFoodPosition;
+}
 
-  snake_head[0]--;
-  current_raw--; */
+// Check if the food is on the snake
+function isFoodOnSnake(position) {
+  return snake.some(
+    (segment) => segment.x === position.x && segment.y === position.y
+  );
+}
 
-  if (snake_head[0] == 17 || snake_head[1] == 17) clearInterval(timer); // for right & down motion
+// Handle keyboard input
+window.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "ArrowUp":
+      if (direction.y !== 1) direction = { x: 0, y: -1 };
+      break;
+    case "ArrowDown":
+      if (direction.y !== -1) direction = { x: 0, y: 1 };
+      break;
+    case "ArrowLeft":
+      if (direction.x !== 1) direction = { x: -1, y: 0 };
+      break;
+    case "ArrowRight":
+      if (direction.x !== -1) direction = { x: 1, y: 0 };
+      break;
+  }
+});
 
-  // if (snake_head[0] == -1 || snake_head[1] == -1) clearInterval(timer); // for left & up motion
-}, 500);
-
-/* document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowRight") {
-    setInterval(() => {}, interval);
-  }
-  if (event.key === "ArrowLeft") {
-  }
-  if (event.key === "ArrowUp") {
-  }
-  if (event.key === "ArrowDown") {
-  }
-}); */
+// Start the game
+startGame();
