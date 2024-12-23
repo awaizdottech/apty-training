@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-browser-information</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../common-css/index.css" />
+  </head>
+  <body>
+    <div id="controls">
+      <input type="text" id="urlInput" placeholder="enter URL here" />
+      <button onclick="navigate()">go</button>
+      <button onclick="goBack()">back</button>
+      <button onclick="goForward()">forward</button>
+      <button onclick="reloadPage()">reload</button>
+    </div>
+    <iframe
+      id="browserFrame"
+      src=""
+      style="width: 100%; height: 80vh; border: 1px solid #ccc"
+    ></iframe>
+  </body>
+</html>

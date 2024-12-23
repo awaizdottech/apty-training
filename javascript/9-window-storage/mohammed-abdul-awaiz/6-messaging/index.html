@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6-messaging</title>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <iframe
+      id="iframe1"
+      style="width: 100%; height: 200px; border: 1px solid black"
+      srcdoc='<h1>iframe window1</h1>
+      <textarea
+        id="iframeMessage"
+        placeholder="message to send to other iframe"
+      ></textarea>
+      <button onclick="window.parent.sendMessageToOtherIframe(`iframe1`)">send to other iframe</button>
+      <p>message from other iframe: <span id="receivedMessage">-</span></p>'
+    >
+    </iframe>
+
+    <iframe
+      id="iframe2"
+      style="width: 100%; height: 200px; border: 1px solid black"
+      srcdoc='
+      <h1>iframe window2</h1>
+      <textarea
+        id="iframeMessage"
+        placeholder="message to send to other iframe"
+      ></textarea>
+      <button onclick="window.parent.sendMessageToOtherIframe(`iframe2`)">send to other iframe</button>
+      <p>message from other iframe: <span id="receivedMessage">-</span></p>'
+    >
+    </iframe>
+  </body>
+</html>

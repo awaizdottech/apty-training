@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-timers</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="../common-css/index.css" />
+  </head>
+  <body>
+    <div class="timer-section">
+      <h2>countdown timer</h2>
+      <input type="number" id="countdownInput" placeholder="Enter seconds" />
+      <button onclick="startCountdown()">start countdown</button>
+      <button onclick="resetCountdown()">reset countdown</button>
+      <p id="countdownDisplay">time remaining: -</p>
+    </div>
+
+    <div class="timer-section">
+      <h2>stopwatch</h2>
+      <button onclick="startStopwatch()">start</button>
+      <button onclick="stopStopwatch()">stop</button>
+      <button onclick="resetStopwatch()">reset</button>
+      <p id="stopwatchDisplay">elapsed time: 0:00</p>
+    </div>
+  </body>
+</html>
