@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Training Day 1</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          line-height: 1.6;
+          background-color: #f4f4f9;
+      }
+
+      header {
+          background-color: #333;
+          color: #fff;
+          padding: 10px 20px;
+          text-align: center;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 20px auto;
+          padding: 20px;
+          background: #fff;
+      }
+
+      .container .header {
+          display: flex;
+          flex-wrap: wrap;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .container iframe {
+          width: 100%;
+          height: 100vh;
+      }
+
+      .topics,
+      .assignments {
+          flex: 1;
+          min-width: 300px;
+          margin: 10px;
+      }
+
+      h2 {
+          color: #333;
+          border-bottom: 2px solid #f4f4f9;
+          padding-bottom: 5px;
+      }
+
+      ul {
+          padding: 0;
+          margin: 10px 0;
+          list-style: none;
+      }
+
+      ul li {
+          padding: 5px 0;
+      }
+
+      ul li::before {
+          content: "•";
+          color: #333;
+          font-weight: bold;
+          display: inline-block;
+          width: 20px;
+      }
+
+      footer {
+          text-align: center;
+          padding: 10px;
+          background: #333;
+          color: #fff;
+          position: relative;
+          bottom: 0;
+          width: 100%;
+      }
+  </style>
+  </head>
+  <body>
+    <header>
+      <h1>React Training Day 1</h1>
+    </header>
+    <div class="container">
+      <div class="header">
+          <div class="topics">
+            <div class="section">
+              <h2>Topics</h2>
+              <details>
+                <summary>Topics covered</summary>
+                  <ul>
+                    <li>React Basics</li>
+                    <li>React Hooks</li>
+                    <li>Setting up ReactJS in Local Machine</li>
+                  </ul>
+              </details>
+            </div>
+
+            <div class="section">
+              <h2>Task: Task Manager App</h2>
+              <details>
+                <summary>Objective</summary>
+                  <p>
+                    Develop a Task Manager App using React and React Hooks to manage a to-do
+                    list with advanced functionality, while ensuring performance
+                    optimization.
+                  </p>
+                </details>
+
+              <h3>Functional Requirements</h3>
+                  <details><summary>User Management</summary>
+                    <ul>
+                      <li>Add new tasks</li>
+                      <li>Mark tasks as completed</li>
+                      <li>Delete tasks</li>
+                    </ul>
+                  </details>
+                  <details>
+                    <summary>Task Management</summary>
+                    <ul>
+                      <li>Unique ID for each task (auto-generated)</li>
+                      <li>Task Text (required)</li>
+                      <li>Completed Status (boolean)</li>
+                      <li>Store tasks in React Context using useReducer</li>
+                      <li>Persist tasks in local storage</li>
+                    </ul>
+                  </details>
+                <details> 
+                  <summary>Timer</summary>
+                  <ul>
+                    <li>Auto-start on app launch</li>
+                    <li>Increment every second</li>
+                    <li>Reset timer functionality</li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>Performance Optimizations</summary>
+                  <ul>
+                    <li>useMemo for completed task count calculation</li>
+                    <li>useCallback to prevent unnecessary re-renders of functions</li>
+                    <li>React.memo to optimize re-renders of components</li>
+                  </ul>
+                </details>
+
+              <h3>Technical Requirements</h3>
+              <details><summary>React Hooks Usage</summary>
+                <ul>
+                    <li>useState: Manage local state (timer, input field)</li>
+                    <li>useEffect: Automatically increment timer</li>
+                    <li>useContext: Store tasks globally</li>
+                    <li>useReducer: Handle task actions efficiently</li>
+                    <li>useRef: Access input field & timer reference</li>
+                    <li>useMemo: Optimize completed task count calculation</li>
+                    <li>useCallback: Prevent unnecessary function re-creations</li>
+                    <li>
+                      useImperativeHandle: Expose a resetTimer method from the Timer
+                      component
+                    </li>
+                  </ul>
+              </details>
+
+              <h3>UI</h3>
+              <details><summary>Requirements</summary>
+                <ul>
+                  <li>Text input field for tasks</li>
+                  <li>"Add Task" button</li>
+                  <li>List of tasks (with checkbox and remove button)</li>
+                  <li>Completed tasks counter</li>
+                  <li>Timer display</li>
+                  <li>"Reset Timer" button</li>
+                </ul>
+              </details>
+
+              <h3>Implementation</h3>
+                  <details>
+                    <summary>Task State Management (useContext + useReducer)</summary>
+                 
+                  <ul>
+                    <li>Use TaskContext provider for global state</li>
+                    <li>useReducer for handling ADD_TASK, TOGGLE_TASK, REMOVE_TASK</li>
+                  </ul> </details>
+                  <details><summary>Timer (useRef, useEffect, useImperativeHandle)</summary>
+                  <ul>
+                    <li>Store timer in useRef</li>
+                    <li>Start timer on component mount (useEffect)</li>
+                    <li>Allow resetting from parent (useImperativeHandle)</li>
+                  </ul></details>
+                  <details>
+                    <summary>Performance Optimizations (useMemo, useCallback)</summary>
+                  
+                  <ul>
+                    <li>Use useMemo for completed task count calculation</li>
+                    <li>Wrap addTask function with useCallback</li>
+                  </ul></details>
+
+              <h3>Deliverables</h3>
+              <details>
+                <ul>
+                  <li>Fully working Task Manager app</li>
+                  <li>Correctly implemented React hooks</li>
+                  <li>Optimized performance using memoization</li>
+                  <li>Clean, maintainable code</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+      </div>
+      <div>
+        <h2>Assignment Submissions</h2>
+        <details>
+            <summary onclick="showContent(event)">naga-manikanta</summary>
+            <iframe data-src="./naga-manikanta/index.html"></iframe>
+        </details>
+        <details>
+            <summary onclick="showContent(event)">srinivasulu-bommisetty</summary>
+            <iframe data-src="./srinivasulu-bommisetty/index.html"></iframe>
+        </details>
+        <details>
+            <summary onclick="showContent(event)">mohammed-abdul-awaiz</summary>
+            <iframe data-src="./mohammed-abdul-awaiz/index.html"></iframe>
+        </details>
+    </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Javascript Training Program</p>
+    </footer>
+    <script type="text/javascript">
+      // Function to display the selected content
+      function showContent(event) {
+          const iframes = document.getElementsByTagName('iframe');
+          Array.from(iframes).forEach(iframe => {
+              iframe.src = '';
+          });
+          event.target.nextElementSibling.src = event.target.nextElementSibling.dataset.src;
+      }
+  </script>
+  </body>
+</html>
