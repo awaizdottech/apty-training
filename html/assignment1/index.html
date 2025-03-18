@@ -50,7 +50,7 @@
             padding-bottom: 5px;
         }
 
-        ul {
+        /* ul {
             padding: 0;
             margin: 10px 0;
             list-style: none;
@@ -66,7 +66,7 @@
             font-weight: bold;
             display: inline-block;
             width: 20px;
-        }
+        } */
 
         footer {
             text-align: center;
@@ -86,18 +86,252 @@
     <div class="container">
         <div class="header">
             <div class="topics">
-                <h2>Topics</h2>
-                <ul>
-                    <li>Structure of an HTML document</li>
-                    <li>Tags, elements, attributes</li>
-                    <li>Basic tags: <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;h1&gt; to &lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code></li>
-                    <li>Ordered and unordered lists (<code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>)</li>
-                    <li>Nesting lists</li>
-                    <li>Adding images (<code>&lt;img&gt;</code>) and alt text</li>
-                    <li>Creating tables (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;caption&gt;</code>)</li>
-                    <li>Form basics: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;button&gt;</code></li>
-                </ul>
+                <h1>Topics</h1>
+                <p>In HTML, a markup language is used to structure content on the web. These tags and elements form the backbone of web development, allowing developers to define headings, paragraphs, lists, tables, forms, and more with precision.</p>
+
+                <details>
+                    <summary>1. Structure of an HTML Document</summary>
+                    <ul>
+                        <li><strong>Overview</strong>: An HTML document is structured using a standard template that includes a declaration, head, and body sections. This structure ensures proper rendering by web browsers.</li>
+                        <li><strong>Key Elements</strong>:
+                            <ul>
+                                <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document as HTML5. No attributes.</li>
+                                <li><code>&lt;html&gt;</code>: Root element of the HTML page.
+                                    <ul>
+                                        <li><strong>Attributes</strong>:
+                                            <ul>
+                                                <li><code>lang</code>: Specifies the language (e.g., "en", "es", "fr").</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><code>&lt;head&gt;</code>: Contains metadata and document information.
+                                    <ul>
+                                        <li><strong>Attributes</strong>: None directly, but contains elements like <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>, etc.</li>
+                                    </ul>
+                                </li>
+                                <li><code>&lt;body&gt;</code>: Contains the visible content (text, images, links, etc.).
+                                    <ul>
+                                        <li><strong>Attributes</strong>:
+                                            <ul>
+                                                <li><code>bgcolor</code>: Sets background color (e.g., "#ffffff", "red"). Deprecated in HTML5, use CSS instead.</li>
+                                                <li><code>background</code>: Sets background image URL. Deprecated in HTML5, use CSS instead.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: The <code>&lt;!DOCTYPE html&gt;</code> declaration ensures compatibility with HTML5 standards. The <code>&lt;html&gt;</code> tag wraps the entire document, with the <code>lang</code> attribute aiding accessibility and SEO. The <code>&lt;head&gt;</code> section includes metadata (e.g., character encoding via <code>&lt;meta charset="UTF-8"&gt;</code>) and the document title (<code>&lt;title&gt;</code>). The <code>&lt;body&gt;</code> holds all visible content, with legacy attributes like <code>bgcolor</code> now replaced by CSS for modern development.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>2. Tags, Elements, Attributes</summary>
+                    <ul>
+                        <li><strong>Basic Tags</strong>:
+                            <ul>
+                                <li><code>&lt;html&gt;</code>: See above structure.</li>
+                                <li><code>&lt;head&gt;</code>: See above structure.</li>
+                                <li><code>&lt;body&gt;</code>: See above structure.</li>
+                                <li><code>&lt;title&gt;</code>: Defines the document title.
+                                    <ul>
+                                        <li><strong>Attributes</strong>: None.</li>
+                                    </ul>
+                                </li>
+                                <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: Heading levels 1 to 6 (h1 being the largest).
+                                    <ul>
+                                        <li><strong>Attributes</strong>:
+                                            <ul>
+                                                <li><code>align</code>: Alignment (e.g., "left", "center", "right", "justify"). Deprecated in HTML5, use CSS.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><code>&lt;p&gt;</code>: Paragraph tag.
+                                    <ul>
+                                        <li><strong>Attributes</strong>:
+                                            <ul>
+                                                <li><code>align</code>: Alignment (e.g., "left", "center", "right", "justify"). Deprecated in HTML5, use CSS.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><code>&lt;!-- --&gt;</code>: Comment tag. No attributes.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: Tags are the building blocks of HTML, enclosed in angle brackets (e.g., <code>&lt;p&gt;</code>). Elements include the opening tag, content, and closing tag (e.g., <code>&lt;p&gt;Text&lt;/p&gt;</code>). Attributes provide additional information (e.g., <code>align</code> in older HTML) and are specified within the opening tag. Modern HTML5 favors CSS for styling over deprecated attributes like <code>align</code>.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>3. Ordered and Unordered Lists (<code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>)</summary>
+                    <ul>
+                        <li><strong><code>&lt;ol&gt;</code></strong>: Ordered list.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>type</code>: List style (e.g., "1", "A", "a", "I", "i").</li>
+                                        <li><code>start</code>: Starting number (e.g., "1", "5").</li>
+                                        <li><code>reversed</code>: Reverses order (boolean: no value, just presence).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;ul&gt;</code></strong>: Unordered list.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>type</code>: Bullet style (e.g., "disc", "circle", "square"). Deprecated in HTML5, use CSS.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;li&gt;</code></strong>: List item.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>value</code>: Sets the value of the list item (numeric, for <code>&lt;ol&gt;</code>).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: <code>&lt;ol&gt;</code> creates numbered lists, with <code>type</code> and <code>start</code> customizing the numbering style and starting point. <code>&lt;ul&gt;</code> creates bullet-point lists, with <code>type</code> (now deprecated) controlling bullet styles. <code>&lt;li&gt;</code> defines each item, and <code>value</code> overrides the default numbering sequence. Nesting lists is common for hierarchical data.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>4. Nesting Lists</summary>
+                    <ul>
+                        <li><strong>Overview</strong>: Nesting involves placing one list inside another to create hierarchical structures.</li>
+                        <li><strong>Example</strong>:
+                            <pre>
+            &lt;ul&gt;
+                &lt;li&gt;Item 1
+                    &lt;ul&gt;
+                        &lt;li&gt;Subitem 1.1&lt;/li&gt;
+                        &lt;li&gt;Subitem 1.2&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;/ul&gt;
+                            </pre>
+                        </li>
+                        <li><strong>Explanation</strong>: Nesting allows for complex, organized content (e.g., outlines or menus). Use <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> inside <code>&lt;li&gt;</code> tags. Ensure proper closing of tags to avoid rendering issues. CSS can style nested lists differently for visual hierarchy.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>5. Adding Images (<code>&lt;img&gt;</code>) and Alt Text</summary>
+                    <ul>
+                        <li><strong><code>&lt;img&gt;</code></strong>: Embeds an image.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>src</code>: Image URL (e.g., "image.jpg", "https://example.com/image.png").</li>
+                                        <li><code>alt</code>: Alternative text for accessibility (e.g., "A beautiful landscape").</li>
+                                        <li><code>width</code>: Image width in pixels or percentage (e.g., "300", "50%").</li>
+                                        <li><code>height</code>: Image height in pixels or percentage (e.g., "200", "50%").</li>
+                                        <li><code>title</code>: Tooltip text (e.g., "Hover text").</li>
+                                        <li><code>class</code>: CSS class name (e.g., "image-style").</li>
+                                        <li><code>id</code>: Unique identifier (e.g., "main-image").</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: The <code>&lt;img&gt;</code> tag is self-closing and requires a <code>src</code> attribute to specify the image source. The <code>alt</code> attribute is crucial for accessibility, describing the image for screen readers. <code>width</code> and <code>height</code> control size, while <code>title</code> provides hover text. Use CSS for advanced styling.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>6. Creating Tables (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;caption&gt;</code>)</summary>
+                    <ul>
+                        <li><strong><code>&lt;table&gt;</code></strong>: Defines a table.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>border</code>: Border thickness (e.g., "1", "0"). Deprecated in HTML5, use CSS.</li>
+                                        <li><code>width</code>: Table width (e.g., "100%", "500px"). Deprecated in HTML5, use CSS.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;tr&gt;</code></strong>: Table row. No unique attributes.</li>
+                        <li><strong><code>&lt;th&gt;</code></strong>: Header cell.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>colspan</code>: Number of columns to span (e.g., "2").</li>
+                                        <li><code>rowspan</code>: Number of rows to span (e.g., "2").</li>
+                                        <li><code>scope</code>: Defines the cell's scope (e.g., "col", "row", "colgroup", "rowgroup").</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;td&gt;</code></strong>: Data cell. Same attributes as <code>&lt;th&gt;</code> (e.g., <code>colspan</code>, <code>rowspan</code>).</li>
+                        <li><strong><code>&lt;caption&gt;</code></strong>: Table caption.
+                            <ul>
+                                <li><strong>Attributes</strong>: None.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: Tables organize data in rows (<code>&lt;tr&gt;</code>) and columns using <code>&lt;td&gt;</code> for data and <code>&lt;th&gt;</code> for headers. The <code>&lt;caption&gt;</code> provides a title. Attributes like <code>colspan</code> and <code>rowspan</code> merge cells, while <code>scope</code> improves accessibility. Modern styling uses CSS instead of deprecated attributes.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>7. Form Basics: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;button&gt;</code></summary>
+                    <ul>
+                        <li><strong><code>&lt;form&gt;</code></strong>: Creates a form for user input.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>action</code>: URL to submit data (e.g., "/submit").</li>
+                                        <li><code>method</code>: HTTP method (e.g., "get", "post").</li>
+                                        <li><code>enctype</code>: Encoding type (e.g., "application/x-www-form-urlencoded", "multipart/form-data" for files).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;input&gt;</code></strong>: Input field.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>type</code>: Input type (e.g., "text", "password", "checkbox", "radio", "submit", "file", "email", "number", "date").</li>
+                                        <li><code>name</code>: Field name (e.g., "username").</li>
+                                        <li><code>value</code>: Default value (e.g., "Enter text").</li>
+                                        <li><code>placeholder</code>: Hint text (e.g., "Type here").</li>
+                                        <li><code>required</code>: Makes field mandatory (boolean).</li>
+                                        <li><code>disabled</code>: Disables input (boolean).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;label&gt;</code></strong>: Label for an input.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>for</code>: Associates with input ID (e.g., "username").</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>&lt;button&gt;</code></strong>: Submit or reset button.
+                            <ul>
+                                <li><strong>Attributes</strong>:
+                                    <ul>
+                                        <li><code>type</code>: Button type (e.g., "submit", "reset", "button").</li>
+                                        <li><code>value</code>: Button value (e.g., "Submit").</li>
+                                        <li><code>disabled</code>: Disables button (boolean).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Explanation</strong>: <code>&lt;form&gt;</code> collects user data, with <code>action</code> and <code>method</code> defining submission behavior. <code>&lt;input&gt;</code> supports various types for different inputs, with attributes like <code>required</code> ensuring validation. <code>&lt;label&gt;</code> improves accessibility by linking to inputs via <code>for</code>. <code>&lt;button&gt;</code> triggers actions, with <code>type</code> specifying its role.</li>
+                    </ul>
+                </details>
             </div>
+        </div>
+        <div class="header">
             <div class="assignments">
                 <h2>Assignments</h2>
                 <ul>

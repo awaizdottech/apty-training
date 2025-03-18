@@ -50,7 +50,7 @@
             padding-bottom: 5px;
         }
 
-        ul {
+        /* ul {
             padding: 0;
             margin: 10px 0;
             list-style: none;
@@ -66,7 +66,7 @@
             font-weight: bold;
             display: inline-block;
             width: 20px;
-        }
+        } */
 
         footer {
             text-align: center;
@@ -86,17 +86,254 @@
     <div class="container">
         <div class="header">
             <div class="topics">
-                <h2>Topics</h2>
-                <ul>
-                    <li>Semantic elements: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code></li>
-                    <li>Form validation attributes: <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code></li>
-                    <li>Advanced inputs: <code>&lt;email&gt;</code>, <code>&lt;tel&gt;</code>, <code>&lt;date&gt;</code>, <code>&lt;number&gt;</code></li>
-                    <li>Internal and external links</li>
-                    <li>Linking to specific sections using anchors (<code>&lt;a href="#section"&gt;</code>)</li>
-                    <li>Embedding videos and audio (<code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>)</li>
-                    <li>Customizing media controls</li>
-                </ul>
+                <h1>Topics</h1>
+                    <p>HTML provides a wide range of elements and attributes to create semantic, accessible, and interactive web pages. This section covers advanced HTML topics to help you build more structured and dynamic content.</p>
+
+                    <details>
+                        <summary>1. Semantic Elements: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code></summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Semantic elements provide meaning to the structure of a web page, improving accessibility and SEO.</li>
+                            <li><strong>Semantic Tags</strong>:
+                                <ul>
+                                    <li><code>&lt;header&gt;</code>: Represents introductory content or navigational links.
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, but supports global attributes like <code>id</code>, <code>class</code>, <code>style</code>.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;footer&gt;</code>: Represents the footer of a document or section.
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, supports global attributes.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;article&gt;</code>: Defines independent, self-contained content (e.g., blog post).
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, supports global attributes.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;section&gt;</code>: Represents a standalone section of content.
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, supports global attributes.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;nav&gt;</code>: Defines a set of navigation links.
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, supports global attributes.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;aside&gt;</code>: Represents content tangentially related to the main content (e.g., sidebar).
+                                        <ul>
+                                            <li><strong>Attributes</strong>: No specific attributes, supports global attributes.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Explanation</strong>: Semantic elements like <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> define the top and bottom of a page or section, while <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> organize content logically. <code>&lt;nav&gt;</code> is used for navigation menus, and <code>&lt;aside&gt;</code> for secondary content. These tags improve accessibility for screen readers and search engine indexing by providing meaningful structure.</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>2. Form Validation Attributes: <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code></summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Form validation attributes ensure user input meets specific criteria before submission.</li>
+                            <li><strong>Attributes</strong>:
+                                <ul>
+                                    <li><code>required</code>: Makes an input field mandatory.
+                                        <ul>
+                                            <li><strong>Values</strong>: Boolean attribute (no value needed, just presence).</li>
+                                            <li><strong>Applies to</strong>: <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>pattern</code>: Specifies a regular expression the input must match.
+                                        <ul>
+                                            <li><strong>Values</strong>: A valid regular expression (e.g., "[A-Za-z]{3}" for three letters).</li>
+                                            <li><strong>Applies to</strong>: <code>&lt;input&gt;</code> with types like <code>text</code>, <code>email</code>, <code>tel</code>.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>min</code>: Sets the minimum value for numeric or date inputs.
+                                        <ul>
+                                            <li><strong>Values</strong>: Numeric or date value (e.g., "1" for numbers, "2023-01-01" for dates).</li>
+                                            <li><strong>Applies to</strong>: <code>&lt;input&gt;</code> types like <code>number</code>, <code>range</code>, <code>date</code>.</li>
+                                        </ul>
+                                    </li>
+                                    <li><code>max</code>: Sets the maximum value for numeric or date inputs.
+                                        <ul>
+                                            <li><strong>Values</strong>: Numeric or date value (e.g., "100" for numbers, "2025-12-31" for dates).</li>
+                                            <li><strong>Applies to</strong>: <code>&lt;input&gt;</code> types like <code>number</code>, <code>range</code>, <code>date</code>.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Explanation</strong>: The <code>required</code> attribute prevents form submission if the field is empty. <code>pattern</code> enforces specific formats (e.g., a phone number pattern like "\d{3}-\d{3}-\d{4}"). <code>min</code> and <code>max</code> restrict input ranges, such as limiting a number input to 1-100 or a date to a specific range. These attributes reduce the need for JavaScript validation, enhancing user experience.</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>3. Advanced Inputs: <code>&lt;email&gt;</code>, <code>&lt;tel&gt;</code>, <code>&lt;date&gt;</code>, <code>&lt;number&gt;</code></summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Advanced input types provide specific UI controls and validation for different data types.</li>
+                            <li><strong>Input Types</strong>:
+                                <ul>
+                                    <li><code>&lt;input type="email"&gt;</code>: For email addresses.
+                                        <ul>
+                                            <li><strong>Attributes</strong>:
+                                                <ul>
+                                                    <li><code>value</code>: Default email (e.g., "user@example.com").</li>
+                                                    <li><code>placeholder</code>: Hint text (e.g., "Enter your email").</li>
+                                                    <li><code>required</code>: Makes input mandatory.</li>
+                                                    <li><code>pattern</code>: Custom regex (e.g., "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$").</li>
+                                                    <li><code>multiple</code>: Allows multiple emails, separated by commas (boolean).</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;input type="tel"&gt;</code>: For telephone numbers.
+                                        <ul>
+                                            <li><strong>Attributes</strong>:
+                                                <ul>
+                                                    <li><code>value</code>: Default phone number (e.g., "123-456-7890").</li>
+                                                    <li><code>placeholder</code>: Hint text (e.g., "Enter your phone").</li>
+                                                    <li><code>required</code>: Makes input mandatory.</li>
+                                                    <li><code>pattern</code>: Custom regex (e.g., "\d{3}-\d{3}-\d{4}").</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;input type="date"&gt;</code>: For selecting dates.
+                                        <ul>
+                                            <li><strong>Attributes</strong>:
+                                                <ul>
+                                                    <li><code>value</code>: Default date (e.g., "2023-01-01").</li>
+                                                    <li><code>min</code>: Earliest date (e.g., "2023-01-01").</li>
+                                                    <li><code>max</code>: Latest date (e.g., "2025-12-31").</li>
+                                                    <li><code>required</code>: Makes input mandatory.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><code>&lt;input type="number"&gt;</code>: For numeric input.
+                                        <ul>
+                                            <li><strong>Attributes</strong>:
+                                                <ul>
+                                                    <li><code>value</code>: Default number (e.g., "10").</li>
+                                                    <li><code>min</code>: Minimum value (e.g., "1").</li>
+                                                    <li><code>max</code>: Maximum value (e.g., "100").</li>
+                                                    <li><code>step</code>: Increment value (e.g., "1", "0.1").</li>
+                                                    <li><code>required</code>: Makes input mandatory.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Explanation</strong>: These input types provide browser-native validation and UI. <code>email</code> validates email formats, <code>tel</code> accepts phone numbers (with custom patterns), <code>date</code> offers a calendar picker, and <code>number</code> includes a spinner for numeric values. Attributes like <code>min</code>, <code>max</code>, and <code>step</code> enhance control over user input, improving form usability.</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>4. Internal and External Links</summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Links connect web pages or resources using the <code>&lt;a&gt;</code> tag.</li>
+                            <li><strong><code>&lt;a&gt;</code> Tag</strong>:
+                                <ul>
+                                    <li><strong>Attributes</strong>:
+                                        <ul>
+                                            <li><code>href</code>: Specifies the URL (e.g., "https://example.com" for external, "/page.html" for internal).</li>
+                                            <li><code>target</code>: Defines where to open the link (e.g., "_self", "_blank", "_parent", "_top").</li>
+                                            <li><code>rel</code>: Relationship with the linked resource (e.g., "nofollow", "noopener", "noreferrer").</li>
+                                            <li><code>download</code>: Prompts download of the resource (e.g., "filename.pdf").</li>
+                                            <li><code>title</code>: Tooltip text (e.g., "Visit our site").</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Internal Links</strong>: Links to pages within the same site (e.g., <code>&lt;a href="/about.html"&gt;About&lt;/a&gt;</code>).</li>
+                            <li><strong>External Links</strong>: Links to other websites (e.g., <code>&lt;a href="https://example.com"&gt;Example&lt;/a&gt;</code>).</li>
+                            <li><strong>Explanation</strong>: Internal links use relative URLs to navigate within a site, while external links use absolute URLs. The <code>target="_blank"</code> attribute opens links in a new tab, and <code>rel="noopener"</code> enhances security for external links. The <code>download</code> attribute facilitates file downloads, and <code>title</code> improves accessibility.</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>5. Linking to Specific Sections Using Anchors (<code>&lt;a href="#section"&gt;</code>)</summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Anchor links allow navigation to specific sections within a page.</li>
+                            <li><strong>Implementation</strong>:
+                                <ul>
+                                    <li><strong>Anchor Link</strong>: <code>&lt;a href="#section"&gt;Go to Section&lt;/a&gt;</code></li>
+                                    <li><strong>Target Section</strong>: <code>&lt;section id="section"&gt;Content&lt;/section&gt;</code></li>
+                                </ul>
+                            </li>
+                            <li><strong>Attributes</strong>:
+                                <ul>
+                                    <li><code>href</code>: References the section ID with a "#" prefix (e.g., "#section").</li>
+                                    <li><code>id</code>: Unique identifier for the target element (e.g., "section").</li>
+                                </ul>
+                            </li>
+                            <li><strong>Explanation</strong>: Anchor links use the <code>href</code> attribute with a "#" followed by the target element's <code>id</code>. This enables smooth navigation within long pages (e.g., table of contents). For cross-page linking, use <code>&lt;a href="page.html#section"&gt;</code>. CSS can enhance the experience with smooth scrolling (<code>scroll-behavior: smooth</code>).</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>6. Embedding Videos and Audio (<code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>)</summary>
+                        <ul>
+                            <li><strong><code>&lt;video&gt;</code></strong>: Embeds video content.
+                                <ul>
+                                    <li><strong>Attributes</strong>:
+                                        <ul>
+                                            <li><code>src</code>: Video file URL (e.g., "video.mp4").</li>
+                                            <li><code>controls</code>: Shows playback controls (boolean).</li>
+                                            <li><code>autoplay</code>: Automatically plays the video (boolean).</li>
+                                            <li><code>loop</code>: Loops the video (boolean).</li>
+                                            <li><code>muted</code>: Mutes the video (boolean).</li>
+                                            <li><code>poster</code>: Image to display before playback (e.g., "poster.jpg").</li>
+                                            <li><code>width</code>: Video width (e.g., "640").</li>
+                                            <li><code>height</code>: Video height (e.g., "360").</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong><code>&lt;audio&gt;</code></strong>: Embeds audio content.
+                                <ul>
+                                    <li><strong>Attributes</strong>:
+                                        <ul>
+                                            <li><code>src</code>: Audio file URL (e.g., "audio.mp3").</li>
+                                            <li><code>controls</code>: Shows playback controls (boolean).</li>
+                                            <li><code>autoplay</code>: Automatically plays the audio (boolean).</li>
+                                            <li><code>loop</code>: Loops the audio (boolean).</li>
+                                            <li><code>muted</code>: Mutes the audio (boolean).</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Explanation</strong>: The <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> tags embed media directly in the page. The <code>controls</code> attribute provides a browser-native player, while <code>autoplay</code>, <code>loop</code>, and <code>muted</code> control playback behavior. For <code>&lt;video&gt;</code>, the <code>poster</code> attribute sets a preview image. Use <code>&lt;source&gt;</code> inside these tags to provide multiple formats (e.g., MP4, WebM) for broader compatibility.</li>
+                        </ul>
+                    </details>
+
+                    <details>
+                        <summary>7. Customizing Media Controls</summary>
+                        <ul>
+                            <li><strong>Overview</strong>: Customizing media controls involves hiding default controls and using JavaScript/CSS to create custom interfaces.</li>
+                            <li><strong>Steps</strong>:
+                                <ul>
+                                    <li>Remove default controls by omitting the <code>controls</code> attribute.</li>
+                                    <li>Use HTML and CSS to create custom buttons (e.g., play, pause, volume).</li>
+                                    <li>Use JavaScript to control media playback via the HTMLMediaElement API (e.g., <code>video.play()</code>, <code>video.pause()</code>).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Example</strong>:
+                                <pre>
+                &lt;video id="myVideo" src="video.mp4"&gt;&lt;/video&gt;
+                &lt;div class="custom-controls"&gt;
+                    &lt;button onclick="document.getElementById('myVideo').play()"&gt;Play&lt;/button&gt;
+                    &lt;button onclick="document.getElementById('myVideo').pause()"&gt;Pause&lt;/button&gt;
+                &lt;/div&gt;
+                                </pre>
+                            </li>
+                            <li><strong>Explanation</strong>: Custom controls allow for a branded or unique user experience. By removing the <code>controls</code> attribute, you can design your own interface with HTML/CSS. JavaScript interacts with the media element through methods like <code>play()</code>, <code>pause()</code>, and properties like <code>currentTime</code> or <code>volume</code>. This approach is useful for advanced applications but requires additional development effort.</li>
+                        </ul>
+                    </details>
             </div>
+        </div>
+        <div class="header">
             <div class="assignments">
                 <h2>Assignments</h2>
                 <ul>
